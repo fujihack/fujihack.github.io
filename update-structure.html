@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fujihack - Update on Fujihack Project Structure</title>
+	<meta charset="UTF-8">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fujihack will be based on Frontier OS">
+	<meta name="author" content="Daniel Cook">
+</head>
+<body>
+	<ul class="menu"> 
+		<li><a href="."><img src="fujihack.png" width="40"></a></li> 
+	</ul>
+
+	<div class="container">
+
+		<p class="big">Update on Fujihack Project Structure</p>
+		
+		March 3rd, 2023
+
+		<p>For the past year and a half, Fujihack has been a solely a research project, with little useful features.
+		I'm planning on changing this in the coming months with some significant changes to the project's structure:
+		
+		<ul>
+		<li>The <a href="https://github.com/fujihack/fujihack">main Fujihack repository</a> will serve mostly as a kernel (or more accurately, a POSIX abstraction layer over Fujifilm's kernel)</li>
+		<li>The repository will not have any menus or apps, these will be provided by another repository</li>
+		<li><a href="https://www.youtube.com/shorts/34qbxzeRdKg">Actually useful features</a> will be implemented as 'apps', which will be run similarly to Magic Lantern modules</li>
+		</ul>
+		</p>
+		
+		The menus, UI library, linker, app system, and scripting engine will be provided by a separate project I'm working on, called <a href="https://github.com/petabyt/frontier">Frontier</a>.
+		<br><br>
+		Frontier is a Utility Operating System that will allow camera hacks to be easier to develop, test, and debug. Fujihack will use most of the code
+		in Fujihack minus the POSIX compatible kernel, which will be provided by fujihack.
+		<br>
+		Frontier will be usable both on Fujifilm cameras, a custom emulator, and possibly other devices in the future. Being able to run the system on multiple
+		devices will not only make development less painful, but should ensure better stability and safety.
+	</div>
+</body>
+</html>

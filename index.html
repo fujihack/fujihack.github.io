@@ -1,1 +1,136 @@
-Fujihack site is down for upgrades :)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fujihack</title>
+	<meta charset="UTF-8">
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="lit-dark.css">
+	<link rel="stylesheet" type="text/css" href="util.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="We are attempting to reverse engineer and improve Fujifilm digital cameras.">
+	<meta name="author" content="Daniel Cook">
+	<style>
+		.bg {
+			background-image: url(img/menu.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+		.light {
+			background: rgb(153, 153, 153, 0.9);
+		}
+		.middle {
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body class="m0">
+	<div class="vh-100 bg">
+		<div class="bg-gray pv2 row">
+			<a href="https://fujihack.org/" class="ph2"><img class="middle" src="fujihack.png" width="40"></a>
+			<a href="https://wiki.fujihack.org/" class="cell black ph2 pv1">Wiki</a>
+			<a href="https://github.com/fujihack" class="cell black ph2 pv1">Source code</a>
+			<a href="https://discord.gg/UZXDktvAZP" class="cell black ph2 pv1">Discord</a>
+			<a href="https://wiki.fujihack.org/patcher/" class="cell black ph2 pv1">Firmware Patcher</a>
+		</div>
+
+		<div class="vc c white light">
+			<h1>What is Fujihack?</h1>
+			<ul>
+				<li>Fujihack is an open-source hacked utility that can be run on Fujifilm cameras.</li>
+				<li>Fujihack can be run with a patched firmware. Other methods are being worked on and researched.</li>
+				<li>It's currently a <i>research project</i> with the goal of improving and repurposing cameras.</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="c">
+		<h1 class="tc">News</h1>
+		<div class="row">
+			<div class="card col">
+			<img src="img/doom.png" class="w-100">
+			<h4>Fujihack Runs DOOM</h4>
+			<a href="doom.html" class="btn">Read More</a>
+			</div>
+
+			<div class="card col">
+			<img src="img/dbg.png" class="w-100">
+			<h4>Portable Debugger Patch</h4>
+			<a href="https://github.com/fujihack/fujihack/releases/tag/0.1.0" class="btn">Read More</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="c">
+		<div class="card">
+		<h1>What's Been Done?</h1>
+		<ul>
+			<li>Unpack, repack, and modify firmware</li>
+			<li>Harmless code execution hijacks in firmware</li>
+			<li>Portable debugger firmware patch with brute force RAM searching</li>
+			<li>Patch PTP/USB opcode to run custom code and experiment quickly over USB</li>
+			<li>Uncovered <a href="https://wiki.fujihack.org/autoactscr/">hidden scripting abilities</a></li>
+			<li>Complete RAM and flash dump</li>
+			<li>Interface with embedded internal SQLite</li>
+			<li>Extend 14 minute record limit</li>
+			<li>Read IO: buttons, gyroscope, accelerometer</li>
+			<li>Fix broken shutter button with clever button remapping</li>
+			<li>Draw debug text and rasterizer objects</li>
+			<li>OpenGL graphics buffer rendering</li>
+			<li>Background task creation, deletion, semaphores, task hooks, events</li>
+			<li>Primitive card speed tests (capped at 35mbps)</li>
+			<li>Gryoscope Tetris, 7fps DOOM port</li>
+			<li><a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> and <a href="https://basedtech.us/frontier/">Frontier</a> compliant compatibility layer</li>
+		</ul>
+		<h2>Hacked Models</h2>
+		<ul>
+			<li><a href="https://github.com/fujihack/fujihack/blob/master/model/xa2_130.h">X-A2 @ 1.30 (Bin loader, USB code runner)</a></li>
+			<li><a href="https://github.com/fujihack/fujihack/blob/master/model/xf1_101.h">XF1 @ 1.01 (USB code runner)</a></li>
+			<li>Firmware downgrade has been tested on some lenses. (same firmware format used)</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="c">
+		<div class="card">
+		<h2>What's being worked on?</h2>
+		<ul>
+		    <li>Gain stable code execution on the camera without firmware patching</li>
+			<li>Creating a custom menu with apps, scripts, and real time patching and tweaking</li>
+			<li>Reverse engineering and tweaking things like film modes, video, and imaging code</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="c">
+		<div class="card">
+			<h2>Would it work with my camera?</h2>
+			<p>FujiHack will only work on Fujifilm X/GFX/HS/F/Z/Pro cameras. You can put your firmware file into the <a href="https://fujihack.github.io/patcher/">web patcher</a>
+			to see if FujiHack is compatible with your firmware type. <b>In general, FujiHack does NOT support the XP and S series Fujifilm cameras.</b>
+			The S Series has already been <a href="https://chdk.setepontos.com/index.php?topic=6484.0">hacked by CHDK forum members</a>.</p>
+			<h2>What is it written in?</h2>
+			<p>The firmware debugger patches are written in Standard ARM Assembly. Most Fujifilm cameras run a 32 bit ARM v6 SoC.
+			Everything else is written in C, with some apps and scripts being written in Rust and Javascript.</p>
+			<h2>When will you work on X?</h2>
+			<p>This is an <i>open-source non-profit project</i>, and currently is not backed by any company, and has no deadlines or plans. Consider it a miracle that it exists in the first place.</p>
+		</div>
+	</div>
+	
+	<div class="c">
+		<div class="card">
+		<h2>Like what we're working on?</h2>
+		<ul>
+			<li><a href="https://discord.gg/UZXDktvAZP">Join the Discord</a></li>
+			<li>I'm looking for old and/or broken Fujifilm cameras to run experiments on. If you are willing to donate one, shoot
+			me an <a href="mailto:brikbusters@gmail.com">email</a> and I'd be happy to cover shipping costs.</li>
+		</ul>
+		</div>
+	</div>
+
+	<hr>
+	<div class="c">
+		Copyright (C) 2023 by Daniel C and FujiHack contributors<br>
+		FujiHack is not affiliated with Fujifilm or any other group<br>
+		FujiHack code is licensed under the GPL v3.0
+	</div>
+</body>
+</html>
