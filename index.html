@@ -16,7 +16,7 @@
 			background-position: center;
 		}
 		.light {
-			background: rgb(153, 153, 153, 0.9);
+			background: rgb(70, 70, 70, 0.9);
 		}
 		.middle {
 			vertical-align: middle;
@@ -30,15 +30,15 @@
 			<a href="https://wiki.fujihack.org/" class="cell black ph2 pv1">Wiki</a>
 			<a href="https://github.com/fujihack" class="cell black ph2 pv1">Source code</a>
 			<a href="https://discord.gg/UZXDktvAZP" class="cell black ph2 pv1">Discord</a>
-			<a href="https://wiki.fujihack.org/patcher/" class="cell black ph2 pv1">Firmware Patcher</a>
+			<a href="https://fujihack.org/patcher/" class="cell black ph2 pv1">Firmware Patcher</a>
 		</div>
 
 		<div class="vc c white light">
 			<h1>What is Fujihack?</h1>
 			<ul>
-				<li>Fujihack is an open-source hacked utility that can be run on Fujifilm cameras.</li>
-				<li>Fujihack can be run with a patched firmware. Other methods are being worked on and researched.</li>
-				<li>It's currently a <i>research project</i> with the goal of improving and repurposing cameras.</li>
+				<li>Fujihack is a open-source hacked utility that can be run on Fujifilm cameras.</li>
+				<li>Fujihack can be run with a patched firmware. Alternative methods are under development.</li>
+				<li>It's currently a <i>research project</i> with the goal of improving and fixing cameras.</li>
 			</ul>
 		</div>
 	</div>
@@ -68,7 +68,7 @@
 			<li>Harmless code execution hijacks in firmware</li>
 			<li>Portable debugger firmware patch with brute force RAM searching</li>
 			<li>Patch PTP/USB opcode to run custom code and experiment quickly over USB</li>
-			<li>Uncovered <a href="https://wiki.fujihack.org/autoactscr/">hidden scripting abilities</a></li>
+			<li>Documented <a href="https://wiki.fujihack.org/autoactscr/">hidden scripting abilities</a></li>
 			<li>Complete RAM and flash dump</li>
 			<li>Interface with embedded internal SQLite</li>
 			<li>Extend 14 minute record limit</li>
@@ -94,9 +94,10 @@
 		<div class="card">
 		<h2>What's being worked on?</h2>
 		<ul>
-		    <li>Gain stable code execution on the camera without firmware patching</li>
+		    <li>Researching less intrusive methods for code execution</li>
 			<li>Creating a custom menu with apps, scripts, and real time patching and tweaking</li>
-			<li>Reverse engineering and tweaking things like film modes, video, and imaging code</li>
+			<li>Bypassing error codes and remapping buttons to 'repair' broken or flawed cameras</li>
+			<li>Reverse engineering and tweaking imaging and video code</li>
 		</ul>
 		</div>
 	</div>
@@ -104,14 +105,14 @@
 	<div class="c">
 		<div class="card">
 			<h2>Would it work with my camera?</h2>
-			<p>FujiHack will only work on Fujifilm X/GFX/HS/F/Z/Pro cameras. You can put your firmware file into the <a href="https://fujihack.github.io/patcher/">web patcher</a>
+			<p>FujiHack will only ever work on Fujifilm X/GFX/HS/F/Z/Pro cameras. You can put your firmware file into the <a href="https://fujihack.github.io/patcher/">web patcher</a>
 			to see if FujiHack is compatible with your firmware type. <b>In general, FujiHack does NOT support the XP and S series Fujifilm cameras.</b>
 			The S Series has already been <a href="https://chdk.setepontos.com/index.php?topic=6484.0">hacked by CHDK forum members</a>.</p>
 			<h2>What is it written in?</h2>
-			<p>The firmware debugger patches are written in Standard ARM Assembly. Most Fujifilm cameras run a 32 bit ARM v6 SoC.
-			Everything else is written in C, with some apps and scripts being written in Rust and Javascript.</p>
+			<p>The firmware debugger patches are written in standard ARM Assembly. Most Fujifilm cameras run a 32 bit ARM v6 SoC.
+			Everything else is written in C, with some experiments in Rust.</p>
 			<h2>When will you work on X?</h2>
-			<p>This is an <i>open-source non-profit project</i>, and currently is not backed by any company, and has no deadlines or plans. Consider it a miracle that it exists in the first place.</p>
+			<p>This is an <i>open-source non-profit project</i>, and isn't backed by any company, and has no deadlines or plans. Consider it a miracle that it exists in the first place.</p>
 		</div>
 	</div>
 	
@@ -120,7 +121,7 @@
 		<h2>Like what we're working on?</h2>
 		<ul>
 			<li><a href="https://discord.gg/UZXDktvAZP">Join the Discord</a></li>
-			<li>I'm looking for old and/or broken Fujifilm cameras to run experiments on. If you are willing to donate one, shoot
+			<li>I'm looking for broken Fujifilm cameras to run experiments on. If you are willing to donate one in the name of science, shoot
 			me an <a href="mailto:brikbusters@gmail.com">email</a> and I'd be happy to cover shipping costs.</li>
 		</ul>
 		</div>
