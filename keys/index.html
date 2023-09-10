@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="FujiHack Contributors">
+        <link rel="canonical" href="https://wiki.fujihack.org/keys/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Key codes - FujiHack Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../a.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">FujiHack Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fujifilm Internals <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../history/" class="dropdown-item">History overview</a>
+</li>
+                                    
+<li>
+    <a href="../rtos/" class="dropdown-item">Firmware overview</a>
+</li>
+                                    
+<li>
+    <a href="../autoactscr/" class="dropdown-item">AUTO ACT script</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Key codes</a>
+</li>
+                                    
+<li>
+    <a href="../tasks/" class="dropdown-item">Tasks</a>
+</li>
+                                    
+<li>
+    <a href="../ptp/" class="dropdown-item">PTP/USB</a>
+</li>
+                                    
+<li>
+    <a href="../syslog/" class="dropdown-item">Syslog</a>
+</li>
+                                    
+<li>
+    <a href="../signatures/" class="dropdown-item">Function signatures</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../words/" class="dropdown-item">Vocabulary</a>
+</li>
+                                    
+<li>
+    <a href="../structure/" class="dropdown-item">Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../todo/" class="dropdown-item">Help Needed</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../autoactscr/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../tasks/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fujihack/fujihack.github.io" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<table>
+<thead>
+<tr>
+<th>Key ID</th>
+<th>Official Key Name</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>EXE_M</td>
+<td>Menu/OK Button</td>
+</tr>
+<tr>
+<td>2</td>
+<td>UP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>3</td>
+<td>DOWN</td>
+<td>...</td>
+</tr>
+<tr>
+<td>4</td>
+<td>LEFT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>5</td>
+<td>RIGHT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>6</td>
+<td>POWER</td>
+<td>...</td>
+</tr>
+<tr>
+<td>7</td>
+<td>S1</td>
+<td>Shutter half pressed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>S2</td>
+<td>shutter full pressed</td>
+</tr>
+<tr>
+<td>13</td>
+<td>BARR_OP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>14</td>
+<td>BARR_CL</td>
+<td>...</td>
+</tr>
+<tr>
+<td>12</td>
+<td>BARRIER</td>
+<td>...</td>
+</tr>
+<tr>
+<td>520</td>
+<td>CRADLE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>15</td>
+<td>ADAPTER</td>
+<td>...</td>
+</tr>
+<tr>
+<td>16</td>
+<td>USB</td>
+<td>Turning key off turns off PTP/USB</td>
+</tr>
+<tr>
+<td>516</td>
+<td>DOOR</td>
+<td>...</td>
+</tr>
+<tr>
+<td>17</td>
+<td>CARD</td>
+<td>...</td>
+</tr>
+<tr>
+<td>10</td>
+<td>FMODE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>18</td>
+<td>EXP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>19</td>
+<td>METER</td>
+<td>...</td>
+</tr>
+<tr>
+<td>22</td>
+<td>TELE2</td>
+<td>...</td>
+</tr>
+<tr>
+<td>23</td>
+<td>WIDE2</td>
+<td>...</td>
+</tr>
+<tr>
+<td>20</td>
+<td>TELE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>21</td>
+<td>WIDE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>24</td>
+<td>AF</td>
+<td>...</td>
+</tr>
+<tr>
+<td>25</td>
+<td>VIDEO</td>
+<td>...</td>
+</tr>
+<tr>
+<td>26</td>
+<td>HDTV</td>
+<td>...</td>
+</tr>
+<tr>
+<td>27</td>
+<td>CONT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>785</td>
+<td>AS_MODE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>9</td>
+<td>DISP_B</td>
+<td>...</td>
+</tr>
+<tr>
+<td>45</td>
+<td>K_HOME</td>
+<td>...</td>
+</tr>
+<tr>
+<td>11</td>
+<td>K_PLAY</td>
+<td>...</td>
+</tr>
+<tr>
+<td>517</td>
+<td>FACE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>521</td>
+<td>CRD_P</td>
+<td>...</td>
+</tr>
+<tr>
+<td>522</td>
+<td>CRD_U</td>
+<td>...</td>
+</tr>
+<tr>
+<td>513</td>
+<td>MET_SP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>515</td>
+<td>MET_AV</td>
+<td>...</td>
+</tr>
+<tr>
+<td>514</td>
+<td>MET_MU</td>
+<td>...</td>
+</tr>
+<tr>
+<td>50</td>
+<td>HVS_0</td>
+<td>...</td>
+</tr>
+<tr>
+<td>51</td>
+<td>HVS_90</td>
+<td>...</td>
+</tr>
+<tr>
+<td>52</td>
+<td>HVS_180</td>
+<td>...</td>
+</tr>
+<tr>
+<td>53</td>
+<td>HVS_270</td>
+<td>...</td>
+</tr>
+<tr>
+<td>28</td>
+<td>POP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>29</td>
+<td>C_DIAL+</td>
+<td>...</td>
+</tr>
+<tr>
+<td>30</td>
+<td>C_DIAL-</td>
+<td>...</td>
+</tr>
+<tr>
+<td>31</td>
+<td>W_DIAL+</td>
+<td>...</td>
+</tr>
+<tr>
+<td>32</td>
+<td>W_DIAL-</td>
+<td>...</td>
+</tr>
+<tr>
+<td>33</td>
+<td>MF_AF_A</td>
+<td>...</td>
+</tr>
+<tr>
+<td>34</td>
+<td>MF_AF_C</td>
+<td>...</td>
+</tr>
+<tr>
+<td>35</td>
+<td>MF_AF_M</td>
+<td>...</td>
+</tr>
+<tr>
+<td>36</td>
+<td>1P_AF+</td>
+<td>...</td>
+</tr>
+<tr>
+<td>39</td>
+<td>F_RING+</td>
+<td>...</td>
+</tr>
+<tr>
+<td>40</td>
+<td>F_RING-</td>
+<td>...</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Z_RING+</td>
+<td>...</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Z_RING-</td>
+<td>...</td>
+</tr>
+<tr>
+<td>41</td>
+<td>AE-LOCK</td>
+<td>...</td>
+</tr>
+<tr>
+<td>42</td>
+<td>EVF_LCD</td>
+<td>...</td>
+</tr>
+<tr>
+<td>43</td>
+<td>INFO</td>
+<td>...</td>
+</tr>
+<tr>
+<td>527</td>
+<td>AEAF_LOCK</td>
+<td>...</td>
+</tr>
+<tr>
+<td>528</td>
+<td>WB</td>
+<td>...</td>
+</tr>
+<tr>
+<td>519</td>
+<td>K_PS</td>
+<td>...</td>
+</tr>
+<tr>
+<td>523</td>
+<td>AE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>524</td>
+<td>VIEW</td>
+<td>...</td>
+</tr>
+<tr>
+<td>525</td>
+<td>RAW</td>
+<td>...</td>
+</tr>
+<tr>
+<td>48</td>
+<td>EVF_OVF</td>
+<td>...</td>
+</tr>
+<tr>
+<td>518</td>
+<td>MACRO</td>
+<td>...</td>
+</tr>
+<tr>
+<td>58</td>
+<td>CMD_PUSH</td>
+<td>...</td>
+</tr>
+<tr>
+<td>59</td>
+<td>CMD_LEFT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>60</td>
+<td>CMD_RIGHT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>46</td>
+<td>MOVIE_REC</td>
+<td>...</td>
+</tr>
+<tr>
+<td>526</td>
+<td>EYE_SEN</td>
+<td>...</td>
+</tr>
+<tr>
+<td>55</td>
+<td>RING_OFF</td>
+<td>...</td>
+</tr>
+<tr>
+<td>56</td>
+<td>RING_STB</td>
+<td>...</td>
+</tr>
+<tr>
+<td>57</td>
+<td>RING_ON</td>
+<td>...</td>
+</tr>
+<tr>
+<td>54</td>
+<td>FUNCTION2</td>
+<td>...</td>
+</tr>
+<tr>
+<td>47</td>
+<td>FUNCTION</td>
+<td>...</td>
+</tr>
+<tr>
+<td>768</td>
+<td>PLAY</td>
+<td>...</td>
+</tr>
+<tr>
+<td>769</td>
+<td>REC</td>
+<td>...</td>
+</tr>
+<tr>
+<td>770</td>
+<td>AUTO</td>
+<td>...</td>
+</tr>
+<tr>
+<td>771</td>
+<td>QUICK</td>
+<td>...</td>
+</tr>
+<tr>
+<td>772</td>
+<td>SP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>773</td>
+<td>SP2</td>
+<td>...</td>
+</tr>
+<tr>
+<td>774</td>
+<td>SR</td>
+<td>...</td>
+</tr>
+<tr>
+<td>775</td>
+<td>PORTRAIT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>776</td>
+<td>LANDSCAPE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>777</td>
+<td>SPORTS</td>
+<td>...</td>
+</tr>
+<tr>
+<td>778</td>
+<td>NIGHT</td>
+<td>...</td>
+</tr>
+<tr>
+<td>780</td>
+<td>BLURRE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>779</td>
+<td>NATURAL</td>
+<td>...</td>
+</tr>
+<tr>
+<td>782</td>
+<td>PROGRAM</td>
+<td>...</td>
+</tr>
+<tr>
+<td>783</td>
+<td>SHUTTER</td>
+<td>...</td>
+</tr>
+<tr>
+<td>784</td>
+<td>APERTURE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>786</td>
+<td>MANUAL</td>
+<td>...</td>
+</tr>
+<tr>
+<td>781</td>
+<td>N_FLASH</td>
+<td>...</td>
+</tr>
+<tr>
+<td>791</td>
+<td>C1</td>
+<td>...</td>
+</tr>
+<tr>
+<td>792</td>
+<td>C2</td>
+<td>...</td>
+</tr>
+<tr>
+<td>793</td>
+<td>C3</td>
+<td>...</td>
+</tr>
+<tr>
+<td>794</td>
+<td>FSB</td>
+<td>...</td>
+</tr>
+<tr>
+<td>44</td>
+<td>ISO</td>
+<td>...</td>
+</tr>
+<tr>
+<td>796</td>
+<td>ADVANCE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>789</td>
+<td>SETUP</td>
+<td>...</td>
+</tr>
+<tr>
+<td>786</td>
+<td>M_SEL</td>
+<td>...</td>
+</tr>
+<tr>
+<td>787</td>
+<td>VOICE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>788</td>
+<td>MOVIE</td>
+<td>...</td>
+</tr>
+<tr>
+<td>825</td>
+<td>JIG</td>
+<td>...</td>
+</tr>
+<tr>
+<td>795</td>
+<td>EXR</td>
+<td>...</td>
+</tr>
+<tr>
+<td>787</td>
+<td>VREC</td>
+<td>...</td>
+</tr>
+<tr>
+<td>788</td>
+<td>MJPEG</td>
+<td>...</td>
+</tr>
+<tr>
+<td>772</td>
+<td>SCEN_P</td>
+<td>...</td>
+</tr>
+<tr>
+<td>772</td>
+<td>SCEN_S</td>
+<td>...</td>
+</tr>
+<tr>
+<td>782</td>
+<td>MMOD_P</td>
+<td>...</td>
+</tr>
+<tr>
+<td>783</td>
+<td>MMOD_S</td>
+<td>...</td>
+</tr>
+<tr>
+<td>784</td>
+<td>MMOD_A</td>
+<td>...</td>
+</tr>
+<tr>
+<td>786</td>
+<td>MMOD_M</td>
+<td>...</td>
+</tr>
+<tr>
+<td>18</td>
+<td>APERT</td>
+<td>...</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

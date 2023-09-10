@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="FujiHack Contributors">
+        <link rel="canonical" href="https://wiki.fujihack.org/tasks_xa2/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Tasks xa2 - FujiHack Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../a.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">FujiHack Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fujifilm Internals <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../history/" class="dropdown-item">History overview</a>
+</li>
+                                    
+<li>
+    <a href="../rtos/" class="dropdown-item">Firmware overview</a>
+</li>
+                                    
+<li>
+    <a href="../autoactscr/" class="dropdown-item">AUTO ACT script</a>
+</li>
+                                    
+<li>
+    <a href="../keys/" class="dropdown-item">Key codes</a>
+</li>
+                                    
+<li>
+    <a href="../tasks/" class="dropdown-item">Tasks</a>
+</li>
+                                    
+<li>
+    <a href="../ptp/" class="dropdown-item">PTP/USB</a>
+</li>
+                                    
+<li>
+    <a href="../syslog/" class="dropdown-item">Syslog</a>
+</li>
+                                    
+<li>
+    <a href="../signatures/" class="dropdown-item">Function signatures</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../words/" class="dropdown-item">Vocabulary</a>
+</li>
+                                    
+<li>
+    <a href="../structure/" class="dropdown-item">Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../todo/" class="dropdown-item">Help Needed</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fujihack/fujihack.github.io" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Autogenerated by ripping ghidra C export  </p>
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Task Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x24</td>
+<td>usb</td>
+</tr>
+<tr>
+<td>6</td>
+<td>delay</td>
+</tr>
+<tr>
+<td>9</td>
+<td>timer</td>
+</tr>
+<tr>
+<td>0x50</td>
+<td>flashext</td>
+</tr>
+<tr>
+<td>*</td>
+<td>execcpu</td>
+</tr>
+<tr>
+<td>8</td>
+<td>calendar</td>
+</tr>
+<tr>
+<td>10</td>
+<td>flash</td>
+</tr>
+<tr>
+<td>0x25</td>
+<td>keytimer</td>
+</tr>
+<tr>
+<td>0x62</td>
+<td>lenscom</td>
+</tr>
+<tr>
+<td>100</td>
+<td>lensdata</td>
+</tr>
+<tr>
+<td>99</td>
+<td>lswatch</td>
+</tr>
+<tr>
+<td>0x28</td>
+<td>graphic</td>
+</tr>
+<tr>
+<td>0x22</td>
+<td>lcdevf</td>
+</tr>
+<tr>
+<td>0x49</td>
+<td>vglib</td>
+</tr>
+<tr>
+<td>0x1e</td>
+<td>soundio</td>
+</tr>
+<tr>
+<td>0x1d</td>
+<td>voicecont</td>
+</tr>
+<tr>
+<td>0x29</td>
+<td>audio</td>
+</tr>
+<tr>
+<td>0x1c</td>
+<td>media</td>
+</tr>
+<tr>
+<td>0x66</td>
+<td>mediamsg</td>
+</tr>
+<tr>
+<td>0x3c</td>
+<td>flashloader</td>
+</tr>
+<tr>
+<td>0x5f</td>
+<td>elfloader</td>
+</tr>
+<tr>
+<td>0x3b</td>
+<td>initcont</td>
+</tr>
+<tr>
+<td>0x32</td>
+<td>lensdc</td>
+</tr>
+<tr>
+<td>0x47</td>
+<td>smaphp</td>
+</tr>
+<tr>
+<td>0x47</td>
+<td>smaphp</td>
+</tr>
+<tr>
+<td>4</td>
+<td>playcont</td>
+</tr>
+<tr>
+<td>3</td>
+<td>reccont</td>
+</tr>
+<tr>
+<td>2</td>
+<td>syscont</td>
+</tr>
+<tr>
+<td>7</td>
+<td>usbcont</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ui</td>
+</tr>
+<tr>
+<td>0x23</td>
+<td>mujin</td>
+</tr>
+<tr>
+<td>0x2b</td>
+<td>saclac</td>
+</tr>
+<tr>
+<td>0x2d</td>
+<td>calc1</td>
+</tr>
+<tr>
+<td>0x2e</td>
+<td>calcsub</td>
+</tr>
+<tr>
+<td>0x2f</td>
+<td>imgdc</td>
+</tr>
+<tr>
+<td>0x30</td>
+<td>movdc</td>
+</tr>
+<tr>
+<td>0x41</td>
+<td>chase</td>
+</tr>
+<tr>
+<td>0x42</td>
+<td>mdetect</td>
+</tr>
+<tr>
+<td>0x31</td>
+<td>movrsz</td>
+</tr>
+<tr>
+<td>0x40</td>
+<td>rplib</td>
+</tr>
+<tr>
+<td>0x3e</td>
+<td>facerecog</td>
+</tr>
+<tr>
+<td>0x38</td>
+<td>redeye</td>
+</tr>
+<tr>
+<td>0x21</td>
+<td>uilib</td>
+</tr>
+<tr>
+<td>0x1f</td>
+<td>playsub</td>
+</tr>
+<tr>
+<td>0x20</td>
+<td>wificont</td>
+</tr>
+<tr>
+<td>0x3f</td>
+<td>searchTbl</td>
+</tr>
+<tr>
+<td>0x4a</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x4b</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x4c</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x4d</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x4e</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x4f</td>
+<td>pm</td>
+</tr>
+<tr>
+<td>0x46</td>
+<td>Facebook</td>
+</tr>
+<tr>
+<td>0x57</td>
+<td>netdrvsub</td>
+</tr>
+<tr>
+<td>0x56</td>
+<td>netdrv</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

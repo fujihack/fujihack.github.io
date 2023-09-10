@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="FujiHack Contributors">
+        <link rel="canonical" href="https://wiki.fujihack.org/signatures/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Function signatures - FujiHack Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../a.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">FujiHack Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fujifilm Internals <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../history/" class="dropdown-item">History overview</a>
+</li>
+                                    
+<li>
+    <a href="../rtos/" class="dropdown-item">Firmware overview</a>
+</li>
+                                    
+<li>
+    <a href="../autoactscr/" class="dropdown-item">AUTO ACT script</a>
+</li>
+                                    
+<li>
+    <a href="../keys/" class="dropdown-item">Key codes</a>
+</li>
+                                    
+<li>
+    <a href="../tasks/" class="dropdown-item">Tasks</a>
+</li>
+                                    
+<li>
+    <a href="../ptp/" class="dropdown-item">PTP/USB</a>
+</li>
+                                    
+<li>
+    <a href="../syslog/" class="dropdown-item">Syslog</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Function signatures</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../words/" class="dropdown-item">Vocabulary</a>
+</li>
+                                    
+<li>
+    <a href="../structure/" class="dropdown-item">Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../todo/" class="dropdown-item">Help Needed</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../syslog/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../words/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fujihack/fujihack.github.io" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#rtos-function-signatures" class="nav-link">RTOS Function signatures</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#photo-properties" class="nav-link">photo properties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#usb-plugged-in-screen" class="nav-link">usb plugged-in screen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#hints" class="nav-link">Hints</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#file-io-functions" class="nav-link">File IO Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#msleep" class="nav-link">msleep</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#sqlite-init-function" class="nav-link">SQLite init function</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#flash-reading-functions" class="nav-link">Flash reading functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#multithreading" class="nav-link">Multithreading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#eeprom" class="nav-link">EEPRom</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#debug-messages" class="nav-link">Debug messages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="rtos-function-signatures">RTOS Function signatures</h1>
+<h2 id="photo-properties">photo properties</h2>
+<pre><code>02 00 a0 e3 00 10 a0 e1 1f 20 a0 e3
+</code></pre>
+<p>Typical Layout:</p>
+<pre><code>int show_photo_properties(void) {
+  char cVar1;
+  byte bVar2;
+  ushort uVar3;
+  undefined4 uVar4;
+  short sVar5;
+  uint uVar6;
+  int iVar7;
+  int iVar8;
+  undefined auStack60 [32];
+
+  uVar4 = DAT_X;
+  iVar8 = *DAT_XX;
+  cVar1 = *(char *)(DAT_XXX + 0xe754);
+  if (cVar1 == 2) {
+    fuji_rst_config1(0xf);
+    fuji_rst_config2(10);
+lbl1:
+    if (DAT_007b21ec[0x34b] != 0) {
+      FUN_1(1,(DAT_007b21ec[0x34e] &amp; 0xffffU) - 0x11 &amp; 0xffff,
+                   (DAT_007b21ec[0x34f] &amp; 0xffffU) - 0x11 &amp; 0xffff,
+                   (DAT_007b21ec[0x34e] &amp; 0xffffU) + 0x11 &amp; 0xffff,
+                   (DAT_007b21ec[0x34f] &amp; 0xffffU) + 0x11 &amp; 0xffff,2,0x47);
+      goto lbl3;
+    }
+lbl2:
+    if (cVar1 == 2) goto lbl3;
+  }
+  else {
+    FUN_2(2, 2, 0x1f, 0x14, 0x12, 0, 0xcc);
+    fuji_rst_config1(0xf);
+    fuji_rst_config2(10);
+    if (cVar1 == 1) {
+      FUN_3(0x10, 2, 0xff000684);
+      fuji_rst_write(2, 3, &amp;DAT_STR_X);
+      fuji_rst_write(0x10, 3, &amp;DAT_STR_XX);
+</code></pre>
+<h2 id="usb-plugged-in-screen">usb plugged-in screen</h2>
+<p>Function checks if a global integer is 0, 2, or 3. (signature will match more than 1 function)</p>
+<pre><code>eb 05 00 a0 e3 01 10 a0 e3
+</code></pre>
+<p>Typical Layout:</p>
+<pre><code>void usb_menu(void) {
+  undefined4 uVar1;
+
+  uVar1 = DAT_XXX;
+  if (DAT_USB_MODE == '\0') {
+    FUN_1();
+    FUN_2();
+    DAT_USB_MODE = '\x01';
+  }
+  else {
+    if (DAT_USB_MODE == '\x02') {
+      FUN_3();
+    }
+    if (DAT_USB_MODE == '\x03') {
+      FUN_4();
+      fuji_rst_config1(0xd);
+      fuji_rst_config2(10);
+      FUN_5(2,1,0xff0008a6);
+      FUN_6(5,1,0x7c0);
+      FUN_7();
+      FUN_8(1,1,0x20,0x14,0x12,0,0xff);
+      goto lbl;
+    }
+  }
+  fuji_rst_config1(0xd);
+  FUN_9(0x7c0,0,0xff0008a6,7,2,0x6d);
+  FUN_10(1,1,0x20,0x14,0x12,0,0xff);
+lbl:
+  fuji_rst_config1(uVar1);
+  return;
+}
+</code></pre>
+<h1 id="hints">Hints</h1>
+<h2 id="file-io-functions">File IO Functions</h2>
+<ul>
+<li>Look at <code>WT_LOG</code> and .MSG function</li>
+<li>For directory reading functions, look for <code>"*.*"</code></li>
+<li>Calls are generally ordered as wait(), FIO call, wait(), reset()</li>
+<li>wait() and reset() get access to the SD card, and wait for system operations to pause</li>
+</ul>
+<h2 id="msleep">msleep</h2>
+<ul>
+<li>script WAIT and WAIT_SET code</li>
+</ul>
+<h1 id="sqlite-init-function">SQLite init function</h1>
+<ul>
+<li>Look for unusual SQL code formatting, (<code>"FFDB"</code>)</li>
+</ul>
+<h1 id="flash-reading-functions">Flash reading functions</h1>
+<ul>
+<li>Look for syslog <code>dmain</code> and <code>de</code></li>
+</ul>
+<h1 id="multithreading">Multithreading</h1>
+<ul>
+<li>System task function seems to be context sensitive</li>
+<li>Look for <code>"SoftTimerStart"</code> and <code>"SoftTimerStop"</code></li>
+</ul>
+<h1 id="eeprom">EEPRom</h1>
+<ul>
+<li>Look for most used functions, will modify a byte at an address</li>
+<li><code>fuji_apply_eeprom()</code> is in "eeprom setting menu"</li>
+</ul>
+<h1 id="debug-messages">Debug messages</h1>
+<ul>
+<li><code>fuji_screen_write()</code> is found in "EEPRom Setting Mode"</li>
+<li><code>fuji_discard_text_buffer()</code> is found near that call</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

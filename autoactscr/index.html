@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="FujiHack Contributors">
+        <link rel="canonical" href="https://wiki.fujihack.org/autoactscr/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>AUTO ACT script - FujiHack Wiki</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../a.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/c.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">FujiHack Wiki</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Fujifilm Internals <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../history/" class="dropdown-item">History overview</a>
+</li>
+                                    
+<li>
+    <a href="../rtos/" class="dropdown-item">Firmware overview</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">AUTO ACT script</a>
+</li>
+                                    
+<li>
+    <a href="../keys/" class="dropdown-item">Key codes</a>
+</li>
+                                    
+<li>
+    <a href="../tasks/" class="dropdown-item">Tasks</a>
+</li>
+                                    
+<li>
+    <a href="../ptp/" class="dropdown-item">PTP/USB</a>
+</li>
+                                    
+<li>
+    <a href="../syslog/" class="dropdown-item">Syslog</a>
+</li>
+                                    
+<li>
+    <a href="../signatures/" class="dropdown-item">Function signatures</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../words/" class="dropdown-item">Vocabulary</a>
+</li>
+                                    
+<li>
+    <a href="../structure/" class="dropdown-item">Project Structure</a>
+</li>
+                                    
+<li>
+    <a href="../todo/" class="dropdown-item">Help Needed</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../rtos/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../keys/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fujihack/fujihack.github.io" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#auto-activated-script" class="nav-link">Auto Activated Script</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#activation" class="nav-link">Activation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#rules" class="nav-link">Rules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#keywords" class="nav-link">Keywords</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#types" class="nav-link">Types:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#functions" class="nav-link">Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#examples" class="nav-link">Examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="auto-activated-script">Auto Activated Script</h1>
+<p><code>AUTO_ACT.SCR</code> is a script that is stored on the SD card in the <code>DCAA</code> folder. <code>DCAA</code> stands for Digital Camera Auto Act.
+This script has been with the Fujifilm cameras <a href="https://en.wikipedia.org/wiki/FinePix_S3_Pro">since 2004</a>, and is still included on modern cameras.</p>
+<h2 id="activation">Activation</h2>
+<ul>
+<li>The script is executed by the <code>mujin</code> task. See <a href="../tasks/">tasks</a>.</li>
+<li>The script is only activated when byte <code>0xa2</code> in EEPROM is set to <code>2</code>.</li>
+<li>It's activated when the camera turns on, just before the menus initialize</li>
+</ul>
+<h2 id="rules">Rules</h2>
+<ul>
+<li>Files absolutely <em>must</em> use Windows style line breaks (<code>\n\r</code>). Else, the lexer will hang.</li>
+<li>Comments start with <code>//</code></li>
+<li>Each token can be no more than <code>20</code> characters long.</li>
+<li>Each line can have up to 10 tokens</li>
+<li>Keywords are case sensitive.</li>
+<li>' ', '\r', and '\t' are whitespace characters.</li>
+</ul>
+<h2 id="keywords">Keywords</h2>
+<pre><code>if
+func
+key
+calc
+set
+jump
+random
+tp
+LABEL
+END
+WAITSET
+WT_LOG
+</code></pre>
+<h3 id="if">if</h3>
+<ul>
+<li>The 5th parameter is only for decoration. The interpreter never checks it. It could be any valid token.</li>
+<li>Supported operations: <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code>, and <code>==</code>.</li>
+</ul>
+<pre><code>if x == 10 jump label
+</code></pre>
+<h3 id="calc">calc</h3>
+<ul>
+<li>The <code>=</code> or 3rd parameter is again, only for decoration.</li>
+<li><code>&amp;</code>, <code>-</code>, <code>*</code>, <code>+</code>, and <code>/</code> are supported math operations.</li>
+</ul>
+<pre><code>calc x = x + 1
+calc x = 123 &amp; 6
+</code></pre>
+<h3 id="jump">jump</h3>
+<ul>
+<li>Jump to a label.</li>
+</ul>
+<pre><code>jump label
+</code></pre>
+<h3 id="label">LABEL</h3>
+<ul>
+<li>Won't work if lowercase.</li>
+</ul>
+<pre><code>LABEL top
+</code></pre>
+<h3 id="wt_log">WT_LOG</h3>
+<ul>
+<li>Creates a function that makes DSCFXXXX.MSG log file in DCIM</li>
+<li>Nothing significant, writes some UI logs in a binary format. Maybe Syslog format?</li>
+<li>Accepts a parameter, but seems to never be used.</li>
+</ul>
+<pre><code>WT_LOG
+</code></pre>
+<h3 id="end">END</h3>
+<ul>
+<li>Ends the script</li>
+</ul>
+<h3 id="key">key</h3>
+<ul>
+<li>Triggers a key press</li>
+<li>First parameter can be <code>MODE</code> or a <a href="../keys/">button key</a> name.</li>
+<li>Second parameter can be <code>ON</code> or <code>OFF</code></li>
+</ul>
+<pre><code>// Disconnect USB
+key USB OFF
+
+// Press UP key
+key UP ON
+</code></pre>
+<h3 id="random">random</h3>
+<ul>
+<li>Random between two numbers</li>
+</ul>
+<pre><code>random x 0 10
+</code></pre>
+<h3 id="wait">wait</h3>
+<ul>
+<li>wait x miliseconds</li>
+</ul>
+<pre><code>wait 2000
+</code></pre>
+<h3 id="waitset">WAITSET</h3>
+<ul>
+<li>Creates a delay between each command in the script, in miliseconds.</li>
+</ul>
+<pre><code>WAITSET 0x1234
+</code></pre>
+<h2 id="types">Types:</h2>
+<h3 id="eeprom-type">EEPROM type</h3>
+<ul>
+<li>Starts with <code>E_</code>, and follows is 4 hexadecimal numbers</li>
+<li>Can be used to either set or get a byte from EEPROM.</li>
+</ul>
+<pre><code>set x = E_a2
+set E_9999 = 123
+</code></pre>
+<h3 id="integer">Integer</h3>
+<ul>
+<li>Can be 5 bytes long</li>
+</ul>
+<pre><code>123
+</code></pre>
+<h3 id="hexadecimal">Hexadecimal</h3>
+<ul>
+<li>Must be lower case</li>
+<li>Can only be 4 bytes long</li>
+</ul>
+<pre><code>0x123
+0xa1
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>TODO: more research</p>
+<pre><code>ON
+OFF
+MOVE
+SWEEP
+2ON
+2OFF
+2MOVE
+2SWEEP
+MULTI
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="count-to-10">Count to 10</h3>
+<pre><code>set x = 1
+LABEL lab
+  if x &gt;= 10 jump end
+  calc x = x + 1
+  jump lab
+LABEL end
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
