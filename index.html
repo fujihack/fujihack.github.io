@@ -36,7 +36,7 @@
 			<h1>What is Fujihack?</h1>
 			<ul>
 				<li>Fujihack is a patched firmware that can be run on Fujifilm cameras.</li>
-				<li>It's currently a <i>research project</i> with the goal of improving and fixing cameras.</li>
+				<li>It's a <i>research project</i> with the goal of improving and fixing cameras.</li>
 			</ul>
 		</div>
 	</div>
@@ -62,17 +62,17 @@
 		<div class="card">
 		<h1>What's Been Done?</h1>
 		<ul>
-			<li>Unpack, repack, and modify firmware</li>
-			<li>Harmless code execution hijacks in firmware</li>
-			<li>Portable debugger firmware patch with brute-force RAM searching & patching</li>
+			<li>Code execution through patched firmware</li>
+			<li>Portable debugger patch with brute-force RAM searching & patching</li>
 			<li>Patch RAM code to enable instant read/write/exec abilities over USB</li>
 			<li>Complete RAM and flash dump (1GB, 67mb)</li>
-			<li>Interface with embedded internal SQLite</li>
 			<li>Extend 14 minute record limit</li>
+			<li>Downgrade lenses stuck on buggy official firmware</li>
 			<li>Read IO: buttons, gyroscope, accelerometer</li>
-			<li>Fix broken shutter button with clever button remapping</li>
+			<li>Fix commonly broken buttons with button remapping</li>
 			<li>Documented <a href="https://wiki.fujihack.org/autoactscr/">hidden scripting abilities</a></li>
 			<li>Draw debug text and rasterizer objects</li>
+			<li>Interface with embedded internal SQLite</li>
 			<li>Graphics rendering onto OpenGL buffer</li>
 			<li>Background task creation, deletion, semaphores, task hooks, events</li>
 			<li>Primitive card speed tests (capped at 35mbps)</li>
@@ -103,14 +103,14 @@
 	<div class="c">
 		<div class="card">
 			<h2>Would it work with my camera?</h2>
-			<p>FujiHack will only ever work on Fujifilm X/GFX/HS/F/Z/Pro cameras. You can put your firmware file into the <a href="https://fujihack.github.io/patcher/">web patcher</a>
-			to see if FujiHack is compatible with your firmware type. <b>In general, FujiHack does NOT support the XP and S series Fujifilm cameras.</b>
+			<p>FujiHack will only ever work on Fujifilm X/GFX/HS/F/Z/Pro cameras. See the <a href="https://wiki.fujihack.org/supported">unsupported models list</a>. <b>In general, FujiHack does NOT support the XP and S series Fujifilm cameras.</b>
 			The S Series has already been <a href="https://chdk.setepontos.com/index.php?topic=6484.0">hacked by CHDK forum members</a>.</p>
 			<h2>What is it written in?</h2>
 			<p>The firmware debugger patches are written in ARM Assembly. Most Fujifilm cameras run a custom ARM v6 SoC.
-			Everything else is written in C, with some experiments in Rust.</p>
+			Everything else is written in C.</p>
 			<h2>When will you work on X?</h2>
-			<p>This is an <i>open-source non-profit project</i>, and isn't backed by any company, and has no deadlines or plans. Consider it a miracle that it exists in the first place.</p>
+			<p>Fujihack has and will always be non-commercial, hobbyist, and therefore will have no plans or deadlines. If you desperately need a feature
+			on your camera, hacking it should be a last resort in most cases.</p>
 		</div>
 	</div>
 	
@@ -119,8 +119,6 @@
 		<h2>Still interested?</h2>
 		<ul> 
 			<li><a href="https://discord.gg/UZXDktvAZP">Join the Discord</a></li> 
-			<!-- <li>I'm looking for broken Fujifilm cameras to run experiments on. If you are willing to donate one in the name of science, shoot -->
-			<!-- me an <a href="mailto:brikbusters@gmail.com">email</a> and I'd be happy to cover shipping costs.</li> -->
 		</ul> 
 		</div>
 	</div>
