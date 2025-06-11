@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <link rel="icon" href="$top$/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+$endif$
+$if(description-meta)$
+  <meta name="description" content="$description-meta$" />
+$endif$
+  <title>$if(page-title)$$page-title$$endif$$if(title)$$title$$endif$</title>
+$for(css)$
+  <link rel="stylesheet" href="$css$" />
+$endfor$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+$if(math)$
+  $math$
+$endif$
+  <style>
+  /* Fix for markdown images */
+  article img {
+    max-width: 100%;
+    display: block;
+    padding: 10px;
+  }
+  </style>
+</head>
+
+<body class="bg-darker">
+	<div class="bg-dark pv2 row nav">
+		<a href="./"><img class="middle" src="fujihack.png" width="40"></a>
+		<a href="https://wiki.fujihack.org/">Wiki</a>
+		<a href="https://github.com/fujihack">Github</a>
+	</div>
+
+<div class="c">
+
+$if(title)$
+<header>
+<h1>$title$</h1>
+
+$if(date)$
+<time datetime="$date$">$date$</time>
+$endif$
+
+
+$if(subtitle)$
+<p>$subtitle$</p>
+$endif$
+
+  $for(author)$
+  <p class="author">By $author$</p>
+  $endfor$
+
+  </header>
+$endif$
+
+$if(toc)$
+<nav id="$idprefix$TOC" role="doc-toc">
+$if(toc-title)$
+<h2 id="$idprefix$toc-title">$toc-title$</h2>
+$endif$
+$table-of-contents$
+</nav>
+$endif$
+
+$body$
+
+$if(posts)$
+<div class="m-row">
+  <div class="m-col-m-8 m-push-m-2">
+    <div class="m-landing-news m-note m-default">
+      <h3>Latest news &raquo;</h3>
+      <ul class="m-unstyled">
+$for(posts)$
+        <li><time class="m-text m-dim" datetime="$posts.date$">$posts.date$</time><a href="$posts.link$">$posts.title$</a></li>
+$endfor$
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+$endif$
+
+</div>
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>

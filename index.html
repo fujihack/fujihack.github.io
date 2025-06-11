@@ -19,9 +19,9 @@
 		}
 	</style>
 </head>
-<body class="bg-dark">
+<body class="bg-darker">
 	<div class="vh-100 bg">
-		<div class="bg-darker pv2 row nav">
+		<div class="bg-dark pv2 row nav">
 			<a href="https://fujihack.org/"><img class="middle" src="fujihack.png" width="40"></a>
 			<a href="https://wiki.fujihack.org/">Wiki</a>
 			<a href="https://github.com/fujihack">Github</a>
@@ -30,9 +30,9 @@
 		<div class="vc c white light">
 			<h1>What is Fujihack?</h1>
 			<ul>
-				<li>Fujihack a research project aiming to reverse-engineer and improve Fujifilm cameras.</li>
-				<li>The project's goals are to achieve interoperability and tweak firmware functionality.</li>
-				<li>There aren't any hacks ready for public use yet, but the code is open-source and contributors are welcome.</li>
+				<li>Fujihack is a research project aiming to reverse-engineer and improve Fujifilm cameras.</li>
+				<li>Our goal is to achieve interoperability and tweak the firmware to give users more control.</li>
+				<li>There aren't any hacks ready for public use yet, but the code and information is open and free for you to explore.</li>
 			</ul>
 		</div>
 	</div>
@@ -43,12 +43,14 @@
 			<div class="card col">
 			<img src="img/doom.png" class="w-100">
 			<h4>Fujihack Runs DOOM</h4>
+			<p>April 1 2023</p>
 			<a href="doom.html" class="btn">Read More</a>
 			</div>
 
 			<div class="card col">
 			<img src="img/dbg.png" class="w-100">
 			<h4>Portable Debugger Patch</h4>
+			<p>Oct 26 2022</p>
 			<a href="https://github.com/fujihack/fujihack/releases/tag/0.1.0" class="btn">Read More</a>
 			</div>
 		</div>
@@ -59,21 +61,16 @@
 		<h1>What's Been Done?</h1>
 		<ul>
 			<li>Code execution through patched firmware</li>
-			<li>Portable debugger patch with brute-force RAM searching & patching</li>
-			<li>Patch RAM code to enable instant read/write/exec abilities over USB</li>
-			<li>Complete RAM and flash dump (1GB, 67mb)</li>
+			<li>Complete RAM and ROM dumps</li>
 			<li>Extend 14 minute record limit</li>
 			<li>Downgrade lenses stuck on buggy official firmware</li>
 			<li>Read IO: buttons, gyroscope, accelerometer</li>
-			<li>Fix commonly broken buttons with button remapping</li>
+			<li>Button remapping</li>
 			<li>Documented <a href="https://wiki.fujihack.org/autoactscr/">hidden scripting abilities</a></li>
-			<li>Draw debug text and rasterizer objects</li>
+			<li>Draw debug text, rasterizer objects, and directly to the framebuffer</li>
 			<li>Interface with embedded internal SQLite</li>
-			<li>Graphics rendering onto OpenGL buffer</li>
 			<li>Background task creation, deletion, semaphores, task hooks, events</li>
-			<li>Primitive card speed tests (capped at 35mbps)</li>
-			<li>Gryoscope controlled Tetris, 7fps DOOM port</li>
-			<li><a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> compliant compatibility layer</li>
+			<li>DOOM Port</li>
 		</ul>
 		<h2>Hacked Models</h2>
 		<ul>
@@ -89,9 +86,8 @@
 		<h2>What's being worked on?</h2>
 		<ul>
 			<li>Researching less intrusive methods for code execution</li>
-			<li>Creating a custom menu with apps, scripts, and real time patching and tweaking</li>
-			<li>Bypassing error codes and remapping buttons to 'repair' broken or flawed cameras</li>
-			<li>Reverse-engineering and learning about imaging hardware</li>
+			<li>Bypassing error codes and remapping buttons to give broken cameras a second life</li>
+			<li>Reverse-engineering and learning about image processing pipelines and hardware</li>
 		</ul>
 		</div>
 	</div>
@@ -99,10 +95,10 @@
 	<div class="c">
 		<div class="card">
 			<h2>Would it work with my camera?</h2>
-			<p>Not all Fuji cameras are related to this project. See the <a href="https://wiki.fujihack.org/supported">supported models list</a>.</p>
+			<p>This project only See the <a href="https://wiki.fujihack.org/supported">supported models list</a>.</p>
 			<h2>When will you work on X?</h2>
 			<p>Fujihack has and will always be non-commercial, hobbyist, and therefore will have no plans or deadlines. If you desperately need a feature
-			on your camera, hacking it should be a last resort in most cases.</p>
+			on your camera, it's almost always better and cheaper to buy a better camera.</p>
 		</div>
 	</div>
 	

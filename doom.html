@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-	<title>Fujihack - Fujihack DOOM Port</title>
-	<meta charset="UTF-8">
-	<link rel="icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="lit.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Since AI generated art has made photography obsolete, FujiHack has decided to refocus its efforts to a new niche: Gaming.">
-	<meta name="author" content="Daniel Cook">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <link rel="icon" href="./favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Daniel Cook" />
+  <title>Fujihack DOOM Port</title>
+  <link rel="stylesheet" href="lit.css" />
+  <style>
+  /* Fix for markdown images */
+  article img {
+    max-width: 100%;
+    display: block;
+    padding: 10px;
+  }
+  </style>
 </head>
+
 <body class="bg-darker">
 	<div class="bg-dark pv2 row nav">
 		<a href="./"><img class="middle" src="fujihack.png" width="40"></a>
@@ -16,30 +25,48 @@
 		<a href="https://github.com/fujihack">Github</a>
 	</div>
 
-	<div class="c">
-		<h1>Fujihack DOOM Port</h1>
-		
-		April 1st, 2023
-		
-		<p>Since AI generated art has made photography obsolete, FujiHack has decided to refocus its efforts to a new niche: Gaming.</p>
+<div class="c">
 
-		<p>I present to you, <a href="https://github.com/ozkl/doomgeneric/">DOOM</a> running on the Fujifilm X-A2. This was not an easy feat, it took
-		days of debugging bare metal ARM assembly, not to mention the past year of reverse engineering leading to this point.</p>
-		
-		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BiV-0dywRjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		
-		<p>After a few days of internal testing, we determined that the buttons were not ideal for Doom gameplay and gave cramps.
-		After careful review, we have chosen to expand our efforts to <a href="https://github.com/dogecoinfoundation/libdogecoin/">Dogecoin mining</a>
-		in the next few months.</p>
+<header>
+<h1>Fujihack DOOM Port</h1>
 
-		<hr><br>
+<time datetime="April 1 2023">April 1 2023</time>
 
-		<p>Okay, now that April 1st is over, is it real?</p>
-		<p>Yes, it's real, and I've even provided <a href="https://github.com/fujihack/fujihack/releases/tag/0.2.0">instructions on how to run this on a Fujifilm X-A2</a>.
-		A DOOM port was inevitable, as I needed a way to test the stability of the Fujihack codebase. DOOM helped test almost all of it, such as IO operations
-		(fopen, fseek, fread), screen drawing, button reading, timing, memory allocation, etc.
-		Now that we know it's possible to run complex software on these cameras, I'm working on getting these hacks running
-		<i>without</i> firmware mods, so they can be run safely by anybody.</p>
-	</div>
+
+
+    <p class="author">By Daniel Cook</p>
+  
+  </header>
+
+
+<p>Since AI generated art has made photography obsolete, FujiHack has
+decided to refocus its efforts to a new niche: Gaming.</p>
+<p>I present to you, <a
+href="https://github.com/ozkl/doomgeneric/">DOOM</a> running on the
+Fujifilm X-A2. This was not an easy feat, it took days of debugging bare
+metal ARM assembly, not to mention the past year of reverse engineering
+leading to this point.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BiV-0dywRjk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<p>After a few days of internal testing, we determined that the buttons
+were not ideal for Doom gameplay and gave users cramps. After careful
+review, we have chosen to expand our efforts to <a
+href="https://github.com/dogecoinfoundation/libdogecoin/">Dogecoin
+mining</a> in the next few months.</p>
+<hr />
+<p>Okay, now that April 1st is over, is it real?<br />
+Yes, it’s real, and I’ve even provided <a
+href="https://github.com/fujihack/fujihack/releases/tag/0.2.0">instructions
+on how to run this on a Fujifilm X-A2</a>.</p>
+<p>A DOOM port was inevitable, as I needed a way to test the stability
+of the Fujihack codebase. DOOM helped test almost all of it, especially
+IO operations (fopen, fseek, fread, screen drawing, button reading,
+timing, memory allocation, etc)</p>
+<p>Now that we know it’s possible to run complex software on these
+cameras, I’m working on getting these hacks running <em>without</em>
+firmware mods, so they can be run safely by anybody.</p>
+
+
+</div>
 </body>
 </html>
