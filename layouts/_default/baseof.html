@@ -34,9 +34,9 @@
 				Fujihack
 			</a>
 			<nav aria-label="Site">
-				<a href="{{ .Site.Params.wiki }}">Wiki</a>
-				<a href="{{ .Site.Params.github }}">GitHub</a>
-				<a class="btn btn-small btn-primary" href="{{ .Site.Params.discord }}">Discord</a>
+				<a href="{{ .Site.Params.wiki }}">{{ (resources.Get "icons/book-2.svg").Content | safeHTML }}Wiki</a>
+				<a href="{{ .Site.Params.github }}">{{ (resources.Get "icons/brand-github.svg").Content | safeHTML }}GitHub</a>
+				<a class="btn btn-small btn-primary" href="{{ .Site.Params.discord }}">{{ (resources.Get "icons/brand-discord.svg").Content | safeHTML }}Discord</a>
 			</nav>
 		</div>
 	</header>

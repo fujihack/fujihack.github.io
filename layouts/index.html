@@ -5,8 +5,8 @@
 		<h1>Fujihack</h1>
 		<p class="lead">{{ .Params.lead }}</p>
 		<div class="actions">
-			<a class="btn btn-primary" href="{{ .Site.Params.wiki }}">Read the wiki</a>
-			<a class="btn btn-ghost" href="{{ .Site.Params.github }}">View on GitHub</a>
+			<a class="btn btn-primary" href="{{ .Site.Params.wiki }}">{{ (resources.Get "icons/book-2.svg").Content | safeHTML }}Read the wiki</a>
+			<a class="btn btn-ghost" href="{{ .Site.Params.github }}">{{ (resources.Get "icons/brand-github.svg").Content | safeHTML }}View on GitHub</a>
 		</div>
 	</div>
 </section>
