@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="hero">
+	<div class="container">
+		<p class="kicker">Research project</p>
+		<h1>Fujihack</h1>
+		<p class="lead">{{ .Params.lead }}</p>
+		<div class="actions">
+			<a class="btn btn-primary" href="{{ .Site.Params.wiki }}">Read the wiki</a>
+			<a class="btn btn-ghost" href="{{ .Site.Params.github }}">View on GitHub</a>
+		</div>
+	</div>
+</section>
+
+<div class="container">
+	<section class="news">
+		<h2>News</h2>
+		<div class="cards">
+			{{ range site.RegularPages }}
+				<a class="card" href="{{ .RelPermalink }}">
+					{{ with .Params.image }}<img src="{{ . }}" alt="">{{ end }}
+					<div class="card-body">
+						<h3>{{ .Title }}</h3>
+						<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+					</div>
+				</a>
+			{{ end }}
+		</div>
+	</section>
+
+	<div class="prose">
+		{{ .Content }}
+	</div>
+</div>
+{{ end }}

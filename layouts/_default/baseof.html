@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+	{{ with .Description | default .Site.Params.description }}
+		<meta name="description" content="{{ . }}">
+		<meta property="og:description" content="{{ . }}">
+	{{ end }}
+	<meta property="og:title" content="{{ .Title | default .Site.Title }}">
+	<meta property="og:site_name" content="{{ .Site.Title }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ .Permalink }}">
+	{{ with .Params.image }}
+		<meta property="og:image" content="{{ . | absURL }}">
+		<meta name="twitter:card" content="summary_large_image">
+	{{ else }}
+		<meta name="twitter:card" content="summary">
+	{{ end }}
+	<meta name="color-scheme" content="dark">
+	<meta name="theme-color" content="#141414">
+	<link rel="icon" href="/favicon.ico">
+	{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+</head>
+<body>
+	<a class="skip" href="#main">Skip to content</a>
+
+	<header class="nav">
+		<div class="container nav-inner">
+			<a class="brand" href="{{ .Site.BaseURL }}">
+				<img src="/fujihack.png" width="34" height="34" alt="Fujihack logo">
+				Fujihack
+			</a>
+			<nav aria-label="Site">
+				<a href="{{ .Site.Params.wiki }}">Wiki</a>
+				<a href="{{ .Site.Params.github }}">GitHub</a>
+				<a class="btn btn-small btn-primary" href="{{ .Site.Params.discord }}">Discord</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="main">
+		{{ block "main" . }}{{ end }}
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Copyright © 2021 Daniel C and FujiHack contributors</p>
+			<p>Fujihack is not affiliated with Fujifilm or any other group · Code licensed under the GPL v3.0</p>
+		</div>
+	</footer>
+</body>
+</html>

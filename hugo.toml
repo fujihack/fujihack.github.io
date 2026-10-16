@@ -1,0 +1,17 @@
+baseURL = "https://fujihack.org/"
+languageCode = "en-us"
+title = "Fujihack"
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[params]
+  description = "Fujihack is a research project aiming to reverse-engineer and improve Fujifilm cameras."
+  wiki = "https://wiki.fujihack.org/"
+  github = "https://github.com/fujihack"
+  discord = "https://discord.gg/UZXDktvAZP"
+
+[markup.goldmark.renderer]
+  # Raw HTML in markdown (e.g. the DOOM post's video embed)
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
