@@ -91,6 +91,19 @@ nav a:not(.btn) {
 }
 nav a:not(.btn):hover { background: var(--accent-soft); color: var(--accent-strong); }
 
+/* Mobile nav: links move to their own full-width row */
+@media (max-width: 32rem) {
+	.container { padding-inline: 1rem; }
+	.nav-inner {
+		flex-wrap: wrap;
+		gap: .1rem 1rem;
+		padding-block: .5rem .3rem;
+	}
+	nav { flex: 1 1 100%; justify-content: space-between; gap: .25rem; }
+	nav a:not(.btn) { padding-inline: .4rem; }
+	nav .btn-small { padding-inline: .4rem; }
+}
+
 /* Buttons: plain bordered boxes, tint on hover only */
 .btn {
 	display: inline-flex;
@@ -120,8 +133,9 @@ nav a:not(.btn):hover { background: var(--accent-soft); color: var(--accent-stro
 	display: flex;
 	align-items: center;
 	color: #fff;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .65);
 	background:
-		linear-gradient(180deg, rgba(16, 20, 18, .66), rgba(16, 20, 18, .56)),
+		linear-gradient(180deg, rgba(16, 20, 18, .78), rgba(16, 20, 18, .68)),
 		url("/img/menu.jpg") center / cover no-repeat;
 	border-bottom: 2px solid var(--border);
 }
